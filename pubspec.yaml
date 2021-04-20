@@ -24,6 +24,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  freezed: ^0.14.1+2
   pedantic: ^1.11.0
   riverpod: ^0.14.0+1
   state_notifier: ^0.7.0
