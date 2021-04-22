@@ -20,13 +20,18 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
+dependency_overrides:
+  analyzer: any
+
 dependencies:
+  build_runner: ^1.12.2
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_hooks: ^0.16.0
   freezed: ^0.14.1+2
+  hooks_riverpod: ^0.14.0+1
   pedantic: ^1.11.0
-  riverpod: ^0.14.0+1
   state_notifier: ^0.7.0
 
 dev_dependencies:
