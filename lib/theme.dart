@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 
-const MaterialColor white = MaterialColor(
-  0xFFFFFFFF,
-  <int, Color>{
-    50: Color(0xFFFFFFFF),
-    100: Color(0xFFFFFFFF),
-    200: Color(0xFFFFFFFF),
-    300: Color(0xFFFFFFFF),
-    400: Color(0xFFFFFFFF),
-    500: Color(0xFFFFFFFF),
-    600: Color(0xFFFFFFFF),
-    700: Color(0xFFFFFFFF),
-    800: Color(0xFFFFFFFF),
-    900: Color(0xFFFFFFFF),
-  },
-);
+MaterialColor materialColor(int i) => MaterialColor(i, <int, Color>{
+      50: Color(i),
+      100: Color(i),
+      200: Color(i),
+      300: Color(i),
+      400: Color(i),
+      500: Color(i),
+      600: Color(i),
+      700: Color(i),
+      800: Color(i),
+      900: Color(i),
+    });
 
 ThemeData lightTheme = ThemeData(
-  primarySwatch: white,
+  primarySwatch: materialColor(0xffFFFFFF),
 );
 
 ThemeData darkTheme = ThemeData.dark();
