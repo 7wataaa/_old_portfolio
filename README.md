@@ -1,6 +1,6 @@
 # portfolio
 
-A new Flutter project.
+Flutter webで鋭意製作中です
 
 ## Getting Started
 
