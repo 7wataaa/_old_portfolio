@@ -33,6 +33,7 @@ class Home extends HookWidget {
       ),
       body: Container(
         child: Scrollbar(
+          isAlwaysShown: true,
           child: SingleChildScrollView(
             child: ResponsiveGrid(
               width: size.width,
