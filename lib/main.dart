@@ -1,22 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/pages/body.dart';
 import 'package:portfolio/theme.dart';
+import 'package:portfolio/widgets/responsive_grid.dart';
 
 void main() {
-  runApp(ProviderScope(
-    child: App(),
-  ));
+  runApp(App());
 }
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      debugShowCheckedModeBanner: false,
+      home: ProviderScope(child: Home()),
       theme: lightTheme,
       darkTheme: darkTheme,
+      locale: const Locale('ja', 'JP'),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ja', 'JP'),
+      ],
     );
   }
 }
@@ -27,74 +38,44 @@ class Home extends HookWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('portfolio'),
-        toolbarHeight: 40,
-      ),
       body: Container(
         child: Scrollbar(
           isAlwaysShown: true,
-          child: SingleChildScrollView(
-            child: ResponsiveGrid(
-              width: size.width,
-              child: Body(),
-            ),
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                //toolbarHeight: 40,
+                expandedHeight: 120,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Text(
+                    'portfolio',
+                    style: GoogleFonts.quicksand(
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ),
+              /* 諸悪の根源
+              const Divider(
+                thickness: 1,
+              ), */
+              const SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 10,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: ResponsiveGrid(
+                  width: size.width,
+                  child: Body(),
+                ),
+              ),
+            ],
           ),
         ),
       ),
-    );
-  }
-}
-
-@immutable
-class ResponsiveGrid extends HookWidget {
-  const ResponsiveGrid({this.width, this.child});
-
-  final double width;
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    if (width <= 1090) {
-      final paddingValue = (() {
-        if (width <= 840) {
-          return 0.0;
-        } else if (width <= 1090) {
-          return 100.0;
-        }
-      })();
-
-      return Padding(
-        padding: EdgeInsets.fromLTRB(
-          paddingValue,
-          0,
-          paddingValue,
-          0,
-        ),
-        child: child,
-      );
-    }
-
-    //width > 1090の場合
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: Container(
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(
-          width: 900,
-          child: child,
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.white,
-          ),
-        ),
-      ],
     );
   }
 }

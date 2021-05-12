@@ -15,6 +15,15 @@ MaterialColor materialColor(int i) => MaterialColor(i, <int, Color>{
 
 ThemeData lightTheme = ThemeData(
   primarySwatch: materialColor(0xffFFFFFF),
+  textTheme: const TextTheme(
+    bodyText1: TextStyle(fontSize: 20),
+  ),
 );
 
-ThemeData darkTheme = ThemeData.dark();
+ThemeData darkTheme = ThemeData(
+  primarySwatch: materialColor(0xffFFFFFF),
+  textTheme: const TextTheme(
+    bodyText1: TextStyle(fontSize: 20),
+  ),
+  brightness: Brightness.dark,
+);
