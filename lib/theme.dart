@@ -13,12 +13,26 @@ MaterialColor materialColor(int i) => MaterialColor(i, <int, Color>{
       900: Color(i),
     });
 
+const appTextTheme = TextTheme(
+  subtitle1: TextStyle(
+    fontFamily: 'Noto Sans JP',
+    fontSize: 24,
+    fontWeight: FontWeight.w100,
+  ),
+  bodyText1: TextStyle(
+    fontFamily: 'Noto Sans JP',
+    fontSize: 17,
+    fontWeight: FontWeight.w100,
+  ),
+);
+
 ThemeData lightTheme = ThemeData(
   primarySwatch: materialColor(0xffFFFFFF),
   fontFamily: 'Noto Sans JP',
 );
 
 ThemeData darkTheme = ThemeData(
+  textTheme: appTextTheme,
   primarySwatch: materialColor(0xffFFFFFF),
   brightness: Brightness.dark,
   fontFamily: 'Noto Sans JP',
