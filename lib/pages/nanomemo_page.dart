@@ -5,6 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/widgets/custom_carousel.dart';
 import 'package:portfolio/widgets/responsive_grid.dart';
 
+const descriptionStr = '''
+タグでメモを整理できるメモアプリ
+
+Googleアカウントもしくはメールアドレスでアカウントを作成することで、
+ユーザーごとにメモを保存できるようにしました。
+
+保存されるデータは、スマホアプリのmemoapp(仮称)と同期が可能になっています。''';
+
 class NanomemoPage extends HookWidget {
   const NanomemoPage({
     Key? key,
@@ -62,14 +70,7 @@ class NanomemoPage extends HookWidget {
                                 ),
                               ),
                               Text(
-                                '''
-タグでメモを整理できるメモアプリ
-
-Googleアカウントもしくはメールアドレスでアカウントを作成することで、
-ユーザーごとにメモを保存できるようにしました。
-
-保存されるデータは、スマホアプリのmemoapp(仮称)と同期が可能になっています。
-''',
+                                descriptionStr,
                                 style: Theme.of(context).textTheme.bodyText1,
                               ),
                             ],
