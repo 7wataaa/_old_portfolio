@@ -43,7 +43,7 @@ class Body extends HookWidget {
             BodyDivider(),
             Container(
               child: Text(
-                'SKILLS',
+                'WORKS',
                 style: GoogleFonts.quicksand(
                   textStyle: Theme.of(context).textTheme.headline3,
                 ),
