@@ -49,16 +49,12 @@ class NanomemoPage extends HookWidget {
                           width: 500,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const <Widget>[
+                            children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.only(bottom: 10),
+                                padding: const EdgeInsets.only(bottom: 10),
                                 child: Text(
                                   '説明',
-                                  style: TextStyle(
-                                    fontFamily: 'Noto Sans JP',
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w100,
-                                  ),
+                                  style: Theme.of(context).textTheme.subtitle1,
                                 ),
                               ),
                               Text(
@@ -70,11 +66,7 @@ Googleアカウントもしくはメールアドレスでアカウントを作�
 
 保存されるデータは、スマホアプリのmemoapp(仮称)と同期が可能になっています。
 ''',
-                                style: TextStyle(
-                                  fontFamily: 'Noto Sans JP',
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w100,
-                                ),
+                                style: Theme.of(context).textTheme.bodyText1,
                               ),
                             ],
                           ),
