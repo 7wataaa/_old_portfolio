@@ -15,19 +15,19 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'portfolio',
       debugShowCheckedModeBanner: false,
-      home: ProviderScope(child: Home()),
       theme: lightTheme,
       darkTheme: darkTheme,
-      locale: const Locale('ja', 'JP'),
+      locale: const Locale('ja', ''),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('ja', 'JP'),
+        Locale('ja', ''),
       ],
+      home: ProviderScope(child: Home()),
     );
   }
 }
