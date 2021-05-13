@@ -1,8 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/widgets/custom_carousel.dart';
 import 'package:portfolio/widgets/responsive_grid.dart';
 
 class NanomemoPage extends HookWidget {
@@ -39,11 +39,15 @@ class NanomemoPage extends HookWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        const SizedBox(
-                          height: 550,
-                          child: Image(
-                            image: AssetImage('assets/nanomemo.png'),
-                          ),
+                        CustomCarousel(
+                          items: const [
+                            Image(
+                              image: AssetImage('assets/nanomemo.png'),
+                            ),
+                            Image(
+                              image: AssetImage('assets/memoapp.png'),
+                            ),
+                          ],
                         ),
                         SizedBox(
                           width: 500,
