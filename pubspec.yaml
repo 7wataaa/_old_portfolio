@@ -29,6 +29,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_hooks: ^0.16.0
+  flutter_localizations:
+    sdk: flutter
   flutter_svg: ^0.22.0
   freezed: ^0.14.1+2
   google_fonts: ^2.0.0
@@ -38,8 +40,6 @@ dependencies:
   url_launcher: ^6.0.3
 
 dev_dependencies:
-  flutter_localizations:
-    sdk: flutter
   flutter_test:
     sdk: flutter
   pedantic_mono: any
@@ -53,6 +53,13 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: Noto Sans JP
+      fonts:
+        - asset: font/NotoSansJP-Light.otf
+        - asset: font/NotoSansJP-Bold.otf
+        - asset: font/NotoSansJP-Medium.otf
+        - asset: font/NotoSansJP-Regular.otf
   assets:
     - assets/
   # To add assets to your application, add an assets section, like this:
