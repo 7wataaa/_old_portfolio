@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/pages/memoapp.dart';
 import 'package:portfolio/pages/nanomemo_page.dart';
 import 'package:portfolio/pages/nnt_page.dart';
 import 'package:portfolio/widgets/body_divider.dart';
@@ -79,8 +80,13 @@ class Body extends HookWidget {
                       image: AssetImage('assets/extension.png'),
                     ),
                   ),
-                  const WorkCard(
-                    child: Image(
+                  WorkCard(
+                    modalBuilder: (context) {
+                      final size = MediaQuery.of(context).size;
+
+                      return MemoappPage(size: size);
+                    },
+                    child: const Image(
                       image: AssetImage('assets/memoapp.png'),
                     ),
                   ),
