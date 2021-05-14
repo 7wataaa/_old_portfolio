@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/pages/nanomemo_page.dart';
+import 'package:portfolio/pages/nnt_page.dart';
 import 'package:portfolio/widgets/body_divider.dart';
 import 'package:portfolio/widgets/github_redirect_button.dart';
 import 'package:portfolio/widgets/work_card.dart';
@@ -68,8 +69,13 @@ class Body extends HookWidget {
                       image: AssetImage('assets/nanomemo.png'),
                     ),
                   ),
-                  const WorkCard(
-                    child: Image(
+                  WorkCard(
+                    modalBuilder: (context) {
+                      final size = MediaQuery.of(context).size;
+
+                      return NNTPage(size: size);
+                    },
+                    child: const Image(
                       image: AssetImage('assets/extension.png'),
                     ),
                   ),
