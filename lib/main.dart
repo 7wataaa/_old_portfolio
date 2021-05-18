@@ -44,7 +44,6 @@ class Home extends HookWidget {
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
-                //toolbarHeight: 40,
                 expandedHeight: 120,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
@@ -57,10 +56,6 @@ class Home extends HookWidget {
                   ),
                 ),
               ),
-              /* 諸悪の根源
-              const Divider(
-                thickness: 1,
-              ), */
               const SliverToBoxAdapter(
                 child: SizedBox(
                   height: 10,

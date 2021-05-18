@@ -44,6 +44,7 @@ class Body extends HookWidget {
             ),
             BodyDivider(),
             Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 25),
               child: Text(
                 'WORKS',
                 style: GoogleFonts.quicksand(
@@ -51,10 +52,8 @@ class Body extends HookWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 25,
-            ),
-            Padding(
+            Container(
+              margin: const EdgeInsets.only(bottom: 15),
               padding: const EdgeInsets.only(left: 50, right: 50),
               child: Wrap(
                 spacing: 20,
@@ -91,6 +90,66 @@ class Body extends HookWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+            BodyDivider(),
+            Container(
+              margin: const EdgeInsets.only(top: 9, bottom: 10),
+              child: Text(
+                'SKILLS',
+                style: GoogleFonts.quicksand(
+                  textStyle: Theme.of(context).textTheme.headline3,
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 15),
+              padding: const EdgeInsets.only(left: 15, right: 10),
+              child: SelectableText.rich(
+                TextSpan(
+                  children: <InlineSpan>[
+                    TextSpan(
+                      text: '・Flutter\n',
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                            fontSize: 23,
+                          ),
+                    ),
+                    const TextSpan(
+                        text:
+                            '''ライブラリ: riverpods、Flutter Hooks、FlutterFireなど\n雑感: Dartも含めてとても好きで、一番長く触っているものになります。\n'''),
+                    TextSpan(
+                      text: '・React （TypeScript）\n',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(fontSize: 23, height: 3),
+                    ),
+                    const TextSpan(
+                        text:
+                            '''ライブラリ・機能 : hooks、Material-UI、styled-componentsなど\n雑感: hooks使ってみたさで触り始めました。使い勝手がシンプルでかつ強力な点が好きです。\n'''),
+                    TextSpan(
+                      text: '・C++\n',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(fontSize: 23, height: 3),
+                    ),
+                    const TextSpan(
+                        text: '''雑感: 競技プログラミング(AtCoder)で使用しています。強くなりたい。\n'''),
+                    TextSpan(
+                      text: '・その他最低限使用できるツール\n',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(fontSize: 23, height: 3),
+                    ),
+                    const TextSpan(
+                        text: '''ツール: adobe XD・Illustrator・Photoshop'''),
+                  ],
+                ),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      fontSize: 20,
+                    ),
               ),
             ),
             BodyDivider(),
