@@ -3,27 +3,27 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "426313f2f3133c2f20415344c4a22df3",
-"index.html": "7e4144dae230dc8fe4f9ba666a5c2956",
-"/": "7e4144dae230dc8fe4f9ba666a5c2956",
-"main.dart.js": "554d83b31ba8f55d39236ec69ba41fe8",
-"favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "a83bbbd9d23ea4d752fbcd44cdc544fa",
-"assets/AssetManifest.json": "855d065fadae9ada343f9c043a950640",
-"assets/NOTICES": "589554c635e120584a38ba1e66f278cb",
-"assets/FontManifest.json": "605e69b3014947f9a36b22221c843a68",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/font/NotoSansJP-Regular.otf": "2bbd3068a53daa60b61f29c3ee9531e7",
-"assets/font/NotoSansJP-Medium.otf": "f7c9eac3d1ee38132ec7fafe34cb6378",
-"assets/font/NotoSansJP-Light.otf": "78d6753b4b8aaef38ad581eb248606ef",
-"assets/font/NotoSansJP-Bold.otf": "0ff89c4f64cd8f24f68a3034fbfefec1",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/assets/memoapp.png": "e7f8995df5d6747d4695d0a3d3b39a62",
+  "assets/assets/memoapp.png": "e7f8995df5d6747d4695d0a3d3b39a62",
 "assets/assets/nanomemo.png": "08c3a61296bfd6518cedf8f9396cccbd",
 "assets/assets/GitHub-Mark-64px.png": "438c17272c5f0e9f4a6da34d3e4bc5bd",
-"assets/assets/extension.png": "f6c67fa6ed5ba20eac7c8feb29367cd9"
+"assets/assets/extension.png": "f6c67fa6ed5ba20eac7c8feb29367cd9",
+"assets/FontManifest.json": "605e69b3014947f9a36b22221c843a68",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/font/NotoSansJP-Medium.otf": "f7c9eac3d1ee38132ec7fafe34cb6378",
+"assets/font/NotoSansJP-Regular.otf": "2bbd3068a53daa60b61f29c3ee9531e7",
+"assets/font/NotoSansJP-Bold.otf": "0ff89c4f64cd8f24f68a3034fbfefec1",
+"assets/font/NotoSansJP-Light.otf": "78d6753b4b8aaef38ad581eb248606ef",
+"assets/NOTICES": "4447aeaf55b2e636087cd29d18b71d84",
+"assets/AssetManifest.json": "855d065fadae9ada343f9c043a950640",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
+"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+"version.json": "426313f2f3133c2f20415344c4a22df3",
+"main.dart.js": "d4b17abcea34d8f998c4400da971b7fc",
+"index.html": "0fe003b03b5c5e6af51a44a7d3005f57",
+"/": "0fe003b03b5c5e6af51a44a7d3005f57",
+"manifest.json": "a83bbbd9d23ea4d752fbcd44cdc544fa",
+"favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -41,7 +41,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
