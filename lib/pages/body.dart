@@ -67,6 +67,7 @@ class Body extends HookWidget {
                     },
                     child: const Image(
                       image: AssetImage('assets/nanomemo.png'),
+                      semanticLabel: 'nanomemo',
                     ),
                   ),
                   WorkCard(
@@ -77,6 +78,7 @@ class Body extends HookWidget {
                     },
                     child: const Image(
                       image: AssetImage('assets/extension.png'),
+                      semanticLabel: 'nnt',
                     ),
                   ),
                   WorkCard(
@@ -87,6 +89,7 @@ class Body extends HookWidget {
                     },
                     child: const Image(
                       image: AssetImage('assets/memoapp.png'),
+                      semanticLabel: 'memoapp',
                     ),
                   ),
                 ],
