@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/rendering.dart';
 
-const url = 'https://github.com/7wataaa';
+const _url = 'https://github.com/7wataaa';
 
 class GithubRedirectButton extends StatelessWidget {
   const GithubRedirectButton({
@@ -15,8 +15,8 @@ class GithubRedirectButton extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () async {
-          if (await canLaunch(url)) {
-            await launch(url);
+          if (await canLaunch(_url)) {
+            await launch(_url);
           }
         },
         child: const Image(

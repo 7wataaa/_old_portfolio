@@ -57,8 +57,9 @@ class MemoappPage extends HookWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        Container(
                           width: 500,
+                          margin: const EdgeInsets.only(bottom: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
