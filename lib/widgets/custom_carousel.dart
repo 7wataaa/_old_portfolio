@@ -109,7 +109,7 @@ class MobileCustomCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 25, 0, 10),
+      margin: const EdgeInsets.fromLTRB(0, 25, 0, 25),
       height: 250,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
