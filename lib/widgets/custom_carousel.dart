@@ -28,11 +28,12 @@ class CustomCarousel extends HookWidget {
                 carouselController: _controller,
                 items: items,
                 options: CarouselOptions(
-                    autoPlay: false,
-                    enableInfiniteScroll: false,
-                    onPageChanged: (index, __) {
-                      currentIndexState.value = index;
-                    }),
+                  autoPlay: false,
+                  enableInfiniteScroll: true,
+                  onPageChanged: (index, __) {
+                    currentIndexState.value = index;
+                  },
+                ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -40,7 +41,8 @@ class CustomCarousel extends HookWidget {
                   margin: const EdgeInsets.only(left: 30),
                   child: IconButton(
                     icon: const Icon(Icons.navigate_before_outlined),
-                    onPressed: _controller.previousPage,
+                    onPressed: () =>
+                        _controller.previousPage(curve: Curves.easeInOut),
                   ),
                 ),
               ),
@@ -50,7 +52,8 @@ class CustomCarousel extends HookWidget {
                   margin: const EdgeInsets.only(right: 30),
                   child: IconButton(
                     icon: const Icon(Icons.navigate_next_outlined),
-                    onPressed: _controller.nextPage,
+                    onPressed: () =>
+                        _controller.nextPage(curve: Curves.easeInOut),
                   ),
                 ),
               ),
@@ -66,8 +69,11 @@ class CustomCarousel extends HookWidget {
               return MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  onTap: () {
-                    _controller.jumpToPage(index);
+                  onTap: () async {
+                    await _controller.animateToPage(
+                      index,
+                      curve: Curves.easeInOut,
+                    );
                     currentIndexState.value = index;
                   },
                   child: Container(
