@@ -97,3 +97,38 @@ class CustomCarousel extends HookWidget {
     );
   }
 }
+
+class MobileCustomCarousel extends StatelessWidget {
+  const MobileCustomCarousel({
+    Key? key,
+    required this.items,
+  }) : super(key: key);
+
+  final List<Widget> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(0, 25, 0, 10),
+      height: 250,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: (() {
+            const space = SizedBox(
+              width: 20,
+            );
+
+            final result = <Widget>[space];
+
+            for (final item in items) {
+              result.addAll([item, space]);
+            }
+
+            return result;
+          })(),
+        ),
+      ),
+    );
+  }
+}

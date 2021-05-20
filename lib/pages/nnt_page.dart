@@ -30,6 +30,15 @@ class NNTPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    const _items = [
+      Image(
+        image: AssetImage('assets/extension.png'),
+      ),
+      Image(
+        image: AssetImage('assets/memoapp.png'),
+      ),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -54,16 +63,11 @@ class NNTPage extends HookWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        CustomCarousel(
-                          items: const [
-                            Image(
-                              image: AssetImage('assets/extension.png'),
-                            ),
-                            Image(
-                              image: AssetImage('assets/memoapp.png'),
-                            ),
-                          ],
-                        ),
+                        size.width <= 480
+                            ? const MobileCustomCarousel(items: _items)
+                            : CustomCarousel(
+                                items: _items,
+                              ),
                         Container(
                           width: 500,
                           margin: const EdgeInsets.only(bottom: 10),

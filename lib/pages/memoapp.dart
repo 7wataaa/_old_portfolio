@@ -23,6 +23,15 @@ class MemoappPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    const _list = [
+      Image(
+        image: AssetImage('assets/memoapp.png'),
+      ),
+      Image(
+        image: AssetImage('assets/extension.png'),
+      ),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -47,16 +56,9 @@ class MemoappPage extends HookWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        CustomCarousel(
-                          items: const [
-                            Image(
-                              image: AssetImage('assets/memoapp.png'),
-                            ),
-                            Image(
-                              image: AssetImage('assets/extension.png'),
-                            ),
-                          ],
-                        ),
+                        size.width <= 480
+                            ? const MobileCustomCarousel(items: _list)
+                            : CustomCarousel(items: _list),
                         Container(
                           width: 500,
                           margin: const EdgeInsets.only(bottom: 10),
