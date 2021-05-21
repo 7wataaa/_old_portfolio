@@ -19,8 +19,11 @@ class GithubRedirectButton extends StatelessWidget {
             await launch(_url);
           }
         },
-        child: const Image(
-          image: AssetImage('assets/GitHub-Mark-64px.png'),
+        child: const Tooltip(
+          message: _url,
+          child: Image(
+            image: AssetImage('assets/GitHub-Mark-64px.png'),
+          ),
         ),
       ),
     );

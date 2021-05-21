@@ -7,6 +7,7 @@ import 'package:portfolio/pages/nanomemo_page.dart';
 import 'package:portfolio/pages/nnt_page.dart';
 import 'package:portfolio/widgets/body_divider.dart';
 import 'package:portfolio/widgets/github_redirect_button.dart';
+import 'package:portfolio/widgets/send_mail_button.dart';
 import 'package:portfolio/widgets/work_card.dart';
 
 class Body extends HookWidget {
@@ -35,8 +36,20 @@ class Body extends HookWidget {
                     alignment: const Alignment(0, 1),
                     child: Container(
                       margin: const EdgeInsets.only(bottom: 30),
-                      width: 40,
-                      child: const GithubRedirectButton(),
+                      child: Wrap(
+                        spacing: 20,
+                        children:  [
+                          const  GithubRedirectButton(),
+                          SendMailButton(),
+                        ]
+                            .map(
+                              (e) => SizedBox(
+                                width: 35,
+                                child: e,
+                              ),
+                            )
+                            .toList(),
+                      ),
                     ),
                   ),
                 ],
