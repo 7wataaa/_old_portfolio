@@ -32,6 +32,8 @@ class MemoappPage extends HookWidget {
       ),
     ];
 
+    final mobilepadding = size.width <= 480 ? 15.0 : 0.0;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -60,6 +62,8 @@ class MemoappPage extends HookWidget {
                             ? const MobileCustomCarousel(items: _list)
                             : CustomCarousel(items: _list),
                         Container(
+                          padding: EdgeInsets.only(
+                              left: mobilepadding, right: mobilepadding),
                           width: 500,
                           margin: const EdgeInsets.only(bottom: 10),
                           child: Column(
