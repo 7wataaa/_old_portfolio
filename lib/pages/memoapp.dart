@@ -27,9 +27,6 @@ class MemoappPage extends HookWidget {
       Image(
         image: AssetImage('assets/memoapp.png'),
       ),
-      Image(
-        image: AssetImage('assets/extension.png'),
-      ),
     ];
 
     final mobilepadding = size.width <= 480 ? 15.0 : 0.0;
