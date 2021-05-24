@@ -25,11 +25,11 @@ class NanomemoPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final _items = [
+      const VideoPlayerWidget(dataSource: 'assets/nanomemo-overview.mp4'),
+      const VideoPlayerWidget(dataSource: 'assets/nanomemo-mail-auth.mp4'),
       const Image(
         image: AssetImage('assets/nanomemo.png'),
       ),
-      const VideoPlayerWidget(dataSource: 'assets/nanomemo-overview.mp4'),
-      const VideoPlayerWidget(dataSource: 'assets/nanomemo-mail-auth.mp4'),
     ];
 
     final mobilepadding = size.width <= 480 ? 15.0 : 0.0;

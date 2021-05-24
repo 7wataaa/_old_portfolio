@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/widgets/custom_carousel.dart';
 import 'package:portfolio/widgets/responsive_grid.dart';
+import 'package:portfolio/widgets/video_player_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const _descriptionStr = '''
@@ -31,11 +32,9 @@ class NNTPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     const _items = [
+      VideoPlayerWidget(dataSource: 'assets/nnt-overview.mp4'),
       Image(
         image: AssetImage('assets/extension.png'),
-      ),
-      Image(
-        image: AssetImage('assets/memoapp.png'),
       ),
     ];
 
