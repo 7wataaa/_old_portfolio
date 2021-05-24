@@ -36,17 +36,23 @@ class Body extends HookWidget {
                     alignment: const Alignment(0, 1),
                     child: Container(
                       margin: const EdgeInsets.only(bottom: 30),
-                      child: Wrap(
-                        spacing: 20,
-                        children:  [
-                          const  GithubRedirectButton(),
+                      child: Row(
+                        //spacing: 20,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const GithubRedirectButton(),
+                          const SizedBox(
+                            width: 15,
+                          ),
                           SendMailButton(),
                         ]
                             .map(
-                              (e) => SizedBox(
-                                width: 35,
-                                child: e,
-                              ),
+                              (e) => e is SizedBox
+                                  ? e
+                                  : SizedBox(
+                                      width: 35,
+                                      child: e,
+                                    ),
                             )
                             .toList(),
                       ),

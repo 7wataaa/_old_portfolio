@@ -13,16 +13,19 @@ class GithubRedirectButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () async {
-          if (await canLaunch(_url)) {
-            await launch(_url);
-          }
-        },
-        child: const Tooltip(
-          message: _url,
-          child: Image(
-            image: AssetImage('assets/GitHub-Mark-64px.png'),
+      child: Padding(
+        padding: const EdgeInsets.all(2),
+        child: GestureDetector(
+          onTap: () async {
+            if (await canLaunch(_url)) {
+              await launch(_url);
+            }
+          },
+          child: const Tooltip(
+            message: _url,
+            child: Image(
+              image: AssetImage('assets/GitHub-Mark-64px.png'),
+            ),
           ),
         ),
       ),
