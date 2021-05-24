@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/widgets/custom_carousel.dart';
 import 'package:portfolio/widgets/responsive_grid.dart';
+import 'package:portfolio/widgets/video_player_widget.dart';
 
 const descriptionStr = '''
 タグでメモを整理できるメモアプリ
@@ -23,13 +24,11 @@ class NanomemoPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    const _items = [
-      Image(
+    final _items = [
+      const Image(
         image: AssetImage('assets/nanomemo.png'),
       ),
-      Image(
-        image: AssetImage('assets/memoapp.png'),
-      ),
+      const VideoPlayerWidget(dataSource: 'assets/nanomemo-overview.mp4'),
     ];
 
     final mobilepadding = size.width <= 480 ? 15.0 : 0.0;
@@ -59,7 +58,7 @@ class NanomemoPage extends HookWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         size.width <= 480
-                            ? const MobileCustomCarousel(items: _items)
+                            ? MobileCustomCarousel(items: _items)
                             : CustomCarousel(
                                 items: _items,
                               ),
