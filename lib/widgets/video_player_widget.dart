@@ -62,8 +62,6 @@ class _VideoState extends State<VideoPlayerWidget> {
       opacityLevel.value = 0;
     }
 
-    print('isHoverOnSeekBar.value = ${isHoverOnSeekBar.value}');
-
     return SizedBox(
       child: _playerController.value.isInitialized
           ? AspectRatio(

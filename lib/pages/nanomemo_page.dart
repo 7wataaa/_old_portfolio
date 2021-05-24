@@ -29,6 +29,7 @@ class NanomemoPage extends HookWidget {
         image: AssetImage('assets/nanomemo.png'),
       ),
       const VideoPlayerWidget(dataSource: 'assets/nanomemo-overview.mp4'),
+      const VideoPlayerWidget(dataSource: 'assets/nanomemo-mail-auth.mp4'),
     ];
 
     final mobilepadding = size.width <= 480 ? 15.0 : 0.0;
