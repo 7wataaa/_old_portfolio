@@ -118,23 +118,16 @@ class _VideoState extends State<VideoPlayerWidget> {
                             onExit: onMouseExitOnSeekBar,
                             child: AnimatedOpacity(
                               opacity: opacityLevel.value,
-                              duration: const Duration(milliseconds: 50),
-                              child: Container(
-                                height: 25,
-                                margin:
-                                    const EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).backgroundColor,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
+                              duration: const Duration(milliseconds: 100),
+                              child: SizedBox(
+                                height: 10,
                                 child: VideoProgressIndicator(
                                   _playerController,
                                   allowScrubbing: true,
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 9, 10, 9),
+                                  padding: const EdgeInsets.symmetric(),
                                   colors: VideoProgressColors(
-                                      playedColor:
-                                          Theme.of(context).accentColor),
+                                    playedColor: Theme.of(context).accentColor,
+                                  ),
                                 ),
                               ),
                             ),
