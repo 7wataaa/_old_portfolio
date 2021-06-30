@@ -2,7 +2,7 @@
 
 Flutter webで鋭意製作中です
 
-GitHub Pagesで公開しています↓
+GitHub Pagesで公開しています: 
 https://7wataaa.github.io/portfolio/
 
 ## Getting Started
