@@ -2,6 +2,9 @@
 
 Flutter webで鋭意製作中です
 
+GitHub Pagesで公開しています↓
+https://7wataaa.github.io/portfolio/
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
