@@ -6,28 +6,34 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/pages/body.dart';
 import 'package:portfolio/theme.dart';
 import 'package:portfolio/widgets/responsive_grid.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(App());
+  runApp(ProviderScope(child: App()));
 }
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'portfolio',
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      locale: const Locale('ja', ''),
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('ja', ''),
-      ],
-      home: ProviderScope(child: Home()),
+    return Consumer(
+      builder: (context, watch, _) {
+        final theme = watch(themeNotifierProvider);
+
+        return MaterialApp(
+          title: 'portfolio',
+          debugShowCheckedModeBanner: false,
+          theme: theme,
+          locale: const Locale('ja', ''),
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('ja', ''),
+          ],
+          home: ProviderScope(child: Home()),
+        );
+      },
     );
   }
 }
@@ -36,6 +42,9 @@ class Home extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final isLightMode =
+        useProvider(themeNotifierProvider).brightness == Brightness.light;
+    debugPrint('${MediaQuery.platformBrightnessOf(context)}');
 
     return Scaffold(
       body: Container(
@@ -44,6 +53,21 @@ class Home extends HookWidget {
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
+                actions: [
+                  Padding(
+                    padding: EdgeInsets.only(right: size.width / 40),
+                    child: IconButton(
+                      onPressed: context
+                          .read(themeNotifierProvider.notifier)
+                          .toggleTheme,
+                      icon: Icon(
+                        isLightMode
+                            ? Icons.dark_mode_outlined
+                            : Icons.light_mode_outlined,
+                      ),
+                    ),
+                  ),
+                ],
                 expandedHeight: 120,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(

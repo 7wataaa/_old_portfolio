@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 MaterialColor materialColor(int i) => MaterialColor(i, <int, Color>{
       50: Color(i),
@@ -37,3 +38,19 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   fontFamily: 'Noto Sans JP',
 );
+
+final themeNotifierProvider =
+    StateNotifierProvider<ThemeStateNotifier, ThemeData>((ref) {
+  return ThemeStateNotifier();
+});
+
+class ThemeStateNotifier extends StateNotifier<ThemeData> {
+  ThemeStateNotifier() : super(darkTheme);
+
+  bool _isDark = false;
+
+  void toggleTheme() {
+    _isDark = !_isDark;
+    state = _isDark ? darkTheme : lightTheme;
+  }
+}

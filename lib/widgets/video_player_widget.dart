@@ -125,9 +125,7 @@ class _VideoState extends State<VideoPlayerWidget> {
                                   _playerController,
                                   allowScrubbing: true,
                                   padding: const EdgeInsets.symmetric(),
-                                  colors: VideoProgressColors(
-                                    playedColor: Theme.of(context).accentColor,
-                                  ),
+                                  colors: const VideoProgressColors(),
                                 ),
                               ),
                             ),
