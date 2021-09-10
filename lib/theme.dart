@@ -47,7 +47,7 @@ final themeNotifierProvider =
 class ThemeStateNotifier extends StateNotifier<ThemeData> {
   ThemeStateNotifier() : super(darkTheme);
 
-  bool _isDark = false;
+  bool _isDark = true;
 
   void toggleTheme() {
     _isDark = !_isDark;

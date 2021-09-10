@@ -44,7 +44,6 @@ class Home extends HookWidget {
     final size = MediaQuery.of(context).size;
     final isLightMode =
         useProvider(themeNotifierProvider).brightness == Brightness.light;
-    debugPrint('${MediaQuery.platformBrightnessOf(context)}');
 
     return Scaffold(
       body: Container(
