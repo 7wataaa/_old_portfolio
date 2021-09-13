@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/pages/memoapp.dart';
-import 'package:portfolio/pages/nanomemo_page.dart';
-import 'package:portfolio/pages/nnt_page.dart';
+import 'package:portfolio/pages/work_description_page_dialog.dart';
 import 'package:portfolio/widgets/body_divider.dart';
 import 'package:portfolio/widgets/github_redirect_button.dart';
 import 'package:portfolio/widgets/send_mail_button.dart';
+import 'package:portfolio/widgets/video_player_widget.dart';
 import 'package:portfolio/widgets/work_card.dart';
 
 class Body extends HookWidget {
@@ -45,16 +44,16 @@ class Body extends HookWidget {
                             width: 15,
                           ),
                           SendMailButton(),
-                        ]
-                            .map(
-                              (e) => e is SizedBox
-                                  ? e
-                                  : SizedBox(
-                                      width: 35,
-                                      child: e,
-                                    ),
-                            )
-                            .toList(),
+                        ].map(
+                          (e) {
+                            return e is SizedBox
+                                ? e
+                                : SizedBox(
+                                    width: 35,
+                                    child: e,
+                                  );
+                          },
+                        ).toList(),
                       ),
                     ),
                   ),
@@ -79,36 +78,141 @@ class Body extends HookWidget {
                 runSpacing: 20,
                 children: [
                   WorkCard(
-                    modalBuilder: (context) {
-                      final size = MediaQuery.of(context).size;
-
-                      return NanomemoPage(size: size);
-                    },
-                    child: const Image(
+                    image: const Image(
                       image: AssetImage('assets/nanomemo.png'),
                       semanticLabel: 'nanomemo',
                     ),
-                  ),
-                  WorkCard(
-                    modalBuilder: (context) {
-                      final size = MediaQuery.of(context).size;
+                    fullscreenDialogPage: WorkDescriptionPageDialog(
+                      title: 'nanomemo',
+                      images: const [
+                        VideoPlayerWidget(
+                            dataSource: 'assets/nanomemo-overview.mp4'),
+                        VideoPlayerWidget(
+                            dataSource: 'assets/nanomemo-mail-auth.mp4'),
+                        Image(
+                          image: AssetImage('assets/nanomemo.png'),
+                        ),
+                      ],
+                      descriptions: [
+                        Text(
+                          '''
+タグでメモを整理できるメモアプリ
 
-                      return NNTPage(size: size);
-                    },
-                    child: const Image(
-                      image: AssetImage('assets/extension.png'),
-                      semanticLabel: 'nnt',
+Firebase Authenticationを利用してユーザー認証を､
+Firebase Cloud Firestoreを利用してデータ管理を行っています｡
+
+保存されるデータは、スマホアプリのmemoapp(仮称)と同期が可能になっています。
+
+フロントは前々から興味があったReactを使用しました｡スマホアプリとの統一感をもたせるため､MaterialUIを採用しています｡
+
+制作期間: 約三ヶ月
+言語: typescript
+使用したもの: React(hooks, MaterialUI, StyledComponents), Firebase(Authentication, Cloud Firestore) など''',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                      ],
                     ),
                   ),
                   WorkCard(
-                    modalBuilder: (context) {
-                      final size = MediaQuery.of(context).size;
+                    image: const Image(
+                      image: AssetImage(
+                          'assets/abc_notification_bot_helpcommand.png'),
+                      semanticLabel: 'abc-notification-bot',
+                    ),
+                    fullscreenDialogPage: WorkDescriptionPageDialog(
+                      title: 'abc-notification-bot',
+                      images: const [
+                        Image(
+                          image: AssetImage(
+                              'assets/abc_notification_bot_helpcommand.png'),
+                          semanticLabel: 'abc-notification-bot',
+                        ),
+                      ],
+                      descriptions: [
+                        Text(
+                          '''
+AtCoder Beginner Contestの開催時間を通知するDiscordボット
 
-                      return MemoappPage(size: size);
-                    },
-                    child: const Image(
+隔週週末の夜に開催されているAtCoder Beginner Contestの通知ボットがあったら便利だと思ったので制作しました｡
+開催時刻から一日前･三十分前と､開催時刻にDiscordにて通知します｡
+
+動作の流れは､
+GASで予定されたコンテスト情報を定期的に取得し､
+サーバーにてGASからデータを取得し､開催時刻になったら通知
+といった流れになっています｡
+
+(GASを挟む理由としては､スクレイピングの定期実行を行うときの信頼性を考慮しました)
+
+制作期間: 約一ヶ月
+言語: typescript
+使用したもの: GAS, Heroku, Docker, ts-node, prisma, Discord.js など''',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                      ],
+                    ),
+                  ),
+                  WorkCard(
+                    image: const Image(
+                      image: AssetImage('assets/extension.png'),
+                      semanticLabel: 'nnt',
+                    ),
+                    fullscreenDialogPage: WorkDescriptionPageDialog(
+                      title: 'nnt',
+                      images: const [
+                        VideoPlayerWidget(
+                          dataSource: 'assets/nnt-overview.mp4',
+                        ),
+                        Image(
+                          image: AssetImage('assets/extension.png'),
+                          semanticLabel: 'nnt',
+                        ),
+                      ],
+                      descriptions: [
+                        Text(
+                          '''
+新しいタブに時計とメモを追加するChrome拡張機能です。
+
+Chrome標準の新しいタブを開いたときの画面が使いにくいと思ったので制作しました。
+
+メモ内容はchrome.storage APIによってアカウント間での同期ができます｡
+
+制作期間: 半月～一ヶ月
+言語: HTML, CSS, JavaScript
+使ったもの(?): Chrome拡張機能, Chromeウェブストア など''',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                      ],
+                    ),
+                  ),
+                  WorkCard(
+                    image: const Image(
                       image: AssetImage('assets/memoapp.png'),
                       semanticLabel: 'memoapp',
+                    ),
+                    fullscreenDialogPage: WorkDescriptionPageDialog(
+                      title: 'memoapp',
+                      images: const [
+                        Image(
+                          image: AssetImage('assets/memoapp.png'),
+                          semanticLabel: 'memoapp',
+                        ),
+                      ],
+                      descriptions: [
+                        Text(
+                          '''
+アプリ制作の練習のために制作したスマートフォン向けメモアプリです｡
+
+Firebase Authenticationを利用してユーザー認証を行いました｡
+データはローカルにも保存できますが､Firebase Cloud Firestoreで同期させることもできるようにしました｡
+
+このアプリの制作で､非同期処理､クラス､git等が最低限扱えるようになったと思います｡
+
+制作期間: 約四ヶ月
+言語: Dart
+使ったもの: Flutter(riverpod), Firebase(Authentication, Cloud Firestore) など''',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -127,52 +231,6 @@ class Body extends HookWidget {
             Container(
               margin: const EdgeInsets.only(bottom: 15),
               padding: const EdgeInsets.only(left: 15, right: 10),
-              child: SelectableText.rich(
-                TextSpan(
-                  children: <InlineSpan>[
-                    TextSpan(
-                      text: '・Flutter\n',
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            fontSize: 23,
-                          ),
-                    ),
-                    const TextSpan(
-                        text:
-                            '''ライブラリ: riverpods、Flutter Hooks、FlutterFireなど\n雑感: Dartも含めてとても好きで、一番長く触っているものになります。\n'''),
-                    TextSpan(
-                      text: '・React （TypeScript）\n',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontSize: 23, height: 3),
-                    ),
-                    const TextSpan(
-                        text:
-                            '''ライブラリ・機能 : hooks、Material-UI、styled-componentsなど\n雑感: hooks使ってみたさで触り始めました。使い勝手がシンプルでかつ強力な点が好きです。\n'''),
-                    TextSpan(
-                      text: '・C++\n',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontSize: 23, height: 3),
-                    ),
-                    const TextSpan(
-                        text: '''雑感: 競技プログラミング(AtCoder)で使用しています。強くなりたい。\n'''),
-                    TextSpan(
-                      text: '・その他最低限使用できるツール\n',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontSize: 23, height: 3),
-                    ),
-                    const TextSpan(
-                        text: '''ツール: adobe XD・Illustrator・Photoshop'''),
-                  ],
-                ),
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                      fontSize: 20,
-                    ),
-              ),
             ),
             BodyDivider(),
           ],
