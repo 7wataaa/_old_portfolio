@@ -25,6 +25,11 @@ const appTextTheme = TextTheme(
     fontSize: 17,
     fontWeight: FontWeight.w100,
   ),
+  bodyText2: TextStyle(
+    fontFamily: 'Noto Sans JP',
+    fontSize: 20,
+    fontWeight: FontWeight.w300,
+  ),
 );
 
 ThemeData lightTheme = ThemeData(
@@ -37,6 +42,7 @@ ThemeData darkTheme = ThemeData(
   primarySwatch: materialColor(0xffFFFFFF),
   brightness: Brightness.dark,
   fontFamily: 'Noto Sans JP',
+  cardColor: Color(Colors.grey.value),
 );
 
 final themeNotifierProvider =
