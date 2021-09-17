@@ -29,10 +29,10 @@ const RESOURCES = {
 "assets/font/NotoSansJP-Bold.otf": "0ff89c4f64cd8f24f68a3034fbfefec1",
 "assets/NOTICES": "be9c58cd3549e8208fdecc495b2d4286",
 "assets/AssetManifest.json": "cd15fc856396d1b75572f745e3eac2c4",
-"index.html": "95f64a12684e59ae9d5f11c100097d2a",
-"/": "95f64a12684e59ae9d5f11c100097d2a",
+"index.html": "b01641d25bc496b6ac7398bd0192df19",
+"/": "b01641d25bc496b6ac7398bd0192df19",
 "manifest.json": "a83bbbd9d23ea4d752fbcd44cdc544fa",
-"main.dart.js": "5ef232804e404f3143ff2b52578aa6b1",
+"main.dart.js": "4b60d5c7dcf368befec249b4b52c1ee0",
 "version.json": "426313f2f3133c2f20415344c4a22df3",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796"
 };
