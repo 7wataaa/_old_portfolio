@@ -42,7 +42,6 @@ ThemeData darkTheme = ThemeData(
   primarySwatch: materialColor(0xffFFFFFF),
   brightness: Brightness.dark,
   fontFamily: 'Noto Sans JP',
-  cardColor: Color(Colors.grey.value),
 );
 
 final themeNotifierProvider =
