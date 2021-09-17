@@ -251,7 +251,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                     width: 32,
                     height: 32,
                     image: AssetImage(
-                      'firebase-logomark.png',
+                      'assets/firebase-logomark.png',
                     ),
                   ),
                   'Firebase',
@@ -260,7 +260,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                 skillRow(
                   context,
                   SvgPicture.asset(
-                    'ts-logo-128.svg',
+                    'assets/ts-logo-128.svg',
                     width: 32,
                   ),
                   'TypeScript',
@@ -270,7 +270,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                 skillRow(
                   context,
                   SvgPicture.asset(
-                    'React-icon.svg',
+                    'assets/React-icon.svg',
                     width: 60,
                   ),
                   'React',
@@ -285,7 +285,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         fit: BoxFit.contain,
-                        image: AssetImage('express-js-logo.png'),
+                        image: AssetImage('assets/express-js-logo.png'),
                       ),
                     ),
                   ),
@@ -298,7 +298,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                     width: 33,
                     height: 33,
                     image: AssetImage(
-                      'cpp_logo.png',
+                      'assets/cpp_logo.png',
                     ),
                   ),
                   'C++',
