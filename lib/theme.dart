@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 MaterialColor materialColor(int i) => MaterialColor(i, <int, Color>{
       50: Color(i),
@@ -16,32 +17,30 @@ MaterialColor materialColor(int i) => MaterialColor(i, <int, Color>{
 
 const appTextTheme = TextTheme(
   subtitle1: TextStyle(
-    fontFamily: 'Noto Sans JP',
     fontSize: 24,
     fontWeight: FontWeight.w100,
   ),
   bodyText1: TextStyle(
-    fontFamily: 'Noto Sans JP',
     fontSize: 17,
     fontWeight: FontWeight.w100,
   ),
   bodyText2: TextStyle(
-    fontFamily: 'Noto Sans JP',
     fontSize: 20,
     fontWeight: FontWeight.w300,
   ),
 );
 
 ThemeData lightTheme = ThemeData(
+  textTheme: appTextTheme,
   primarySwatch: materialColor(0xffFFFFFF),
-  fontFamily: 'Noto Sans JP',
+  fontFamily: GoogleFonts.notoSans().fontFamily,
 );
 
 ThemeData darkTheme = ThemeData(
   textTheme: appTextTheme,
   primarySwatch: materialColor(0xffFFFFFF),
   brightness: Brightness.dark,
-  fontFamily: 'Noto Sans JP',
+  fontFamily: GoogleFonts.notoSans().fontFamily,
 );
 
 final themeNotifierProvider =
