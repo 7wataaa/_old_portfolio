@@ -17,7 +17,7 @@ class WorkDescriptionPageDialog extends HookWidget {
 
   final String title;
 
-  final List<Text> descriptions;
+  final List<SelectableText> descriptions;
 
   @override
   Widget build(BuildContext context) {

@@ -94,7 +94,7 @@ class Body extends HookWidget {
                       ),
                     ],
                     descriptions: [
-                      Text(
+                      SelectableText(
                         '''
 タグでメモを整理できるメモアプリ
 
@@ -129,7 +129,7 @@ Firebase Cloud Firestoreを利用してデータ管理を行っています｡
                       ),
                     ],
                     descriptions: [
-                      Text(
+                      SelectableText(
                         '''
 AtCoder Beginner Contestの開催時間を通知するDiscordボット
 
@@ -168,7 +168,7 @@ GASで予定されたコンテスト情報を定期的に取得し､
                       ),
                     ],
                     descriptions: [
-                      Text(
+                      SelectableText(
                         '''
 新しいタブに時計とメモを追加するChrome拡張機能です。
 
@@ -198,7 +198,7 @@ Chrome標準の新しいタブを開いたときの画面が使いにくいと�
                       ),
                     ],
                     descriptions: [
-                      Text(
+                      SelectableText(
                         '''
 アプリ制作の練習のために制作したスマートフォン向けメモアプリです｡
 
