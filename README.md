@@ -1,6 +1,6 @@
 # portfolio
 
-Flutter webで鋭意製作中です
+[WIP] 新ポートフォリオに移行しています
 
 GitHub Pagesで公開しています: 
 https://7wataaa.github.io/portfolio/
