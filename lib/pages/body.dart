@@ -265,7 +265,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                   ),
                   'TypeScript',
                   '''
-バックエンド(ts-node & Express)､ フロントエンド(React)､ GAS(clasp)で制作経験あり｡ Dartに次いで好き''',
+バックエンド(Express)､ フロントエンド(React)､ GAS(clasp)で制作経験あり｡ Dartに次いで好き''',
                 ),
                 skillRow(
                   context,
@@ -278,22 +278,6 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                 ),
                 skillRow(
                   context,
-                  Container(
-                    width: 32,
-                    height: 32,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        fit: BoxFit.contain,
-                        image: AssetImage('assets/express-js-logo.png'),
-                      ),
-                    ),
-                  ),
-                  'Express.js',
-                  'モバイルバックエンドAPIを制作中...',
-                ),
-                skillRow(
-                  context,
                   const Image(
                     width: 33,
                     height: 33,
@@ -302,7 +286,7 @@ Firebase Authenticationを利用してユーザー認証を行いました｡
                     ),
                   ),
                   'C++',
-                  '競技プログラミングで使用できる程度',
+                  '''競技プログラミング(AtCoderID: nashi13)やArduinoで使用している｡ 好きなアルゴリズムは幅優先探索''',
                 )
               ],
             ),
