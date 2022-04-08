@@ -1,9 +1,9 @@
 # portfolio
 
-[WIP] 新ポートフォリオに移行しています
-
 GitHub Pagesで公開しています: 
-https://7wataaa.github.io/portfolio/
+https://7wataaa.github.io/_portfolio/
+
+([WIP] 新ポートフォリオに移行しています)
 
 ## Getting Started
 
