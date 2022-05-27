@@ -1,9 +1,10 @@
-# portfolio
+# 旧 portfolio
 
 GitHub Pagesで公開しています: 
 https://7wataaa.github.io/_portfolio/
 
-([WIP] 新ポートフォリオに移行しています)
+~~([WIP] 新ポートフォリオに移行しています)~~  
+&emsp;&rarr; 移行しました([リポジトリ](https://github.com/7wataaa/portfolio): https://portfolio-7wataaa.vercel.app/)
 
 ## Getting Started
 
